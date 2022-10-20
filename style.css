@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #8D3DAF;
+    --background-color: #1FAA59;
+    --white-color: #fff;
+    --black-color: #000;
+    --light-black: #242B2E;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-color);
+    font-family: 'Lato',sans-serif;
+}
+
+.container {
+    width: 20%;
+    height: 65vh;
+    background-color: var(--black-color);
+    color: var(--main-color);
+    padding: 1rem 1rem;
+    border-radius: 0.8rem;
+    box-shadow: 0.7rem 0 1.2rem var(--black-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    position: relative;
+    overflow: hidden;
+}
+
+.top-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.top-area span:nth-child(2) {
+    color: var(--white-color);
+    font-size: 0.8rem;
+}
+
+.fa-heart {
+    cursor: pointer;
+}
+
+.middle-area {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.middle-area img {
+    width: 50%;
+    height: 8.5rem;
+    margin-bottom: 1rem;
+}
+
+.middle-area h3 {
+    color: var(--white-color);
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.3rem;
+}
+
+.middle-area p {
+    font-size: 0.8rem;
+}
+
+.progress-bar {
+    margin-bottom: 0.5rem;
+    width: 100%;
+    height: 0.3rem;
+    background: var(--white-color);
+    cursor: pointer;
+    opacity: 0.5;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.progress-load {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--main-color);
+    width: 0rem;
+    height: 100%;
+    border-radius: 1rem;
+    transform: all 0.5s;
+}
+
+.song-timer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.controls {
+    text-align: center;
+    margin-top: 1.3rem;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.volums {
+    position: relative;
+}
+
+.increaseVolume {
+    cursor: pointer;
+    z-index: -1;
+    position: absolute;
+    right: -0.4rem;
+    top: -150%;
+    width: 3rem;
+    height: 0.6rem;
+    transform: rotate(-90deg);
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.enableVolumeBtn {
+    opacity: 1;
+}
+
+.increaseVolume::-webkit-slider-runnable-track {
+    background: var(--main-color);
+    border-radius: 1rem;
+}
+
+.controls i {
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.controls i:nth-child(3) {
+    background-color: var(--main-color);
+    padding: 0.9rem 1rem;
+    border-radius: 100%;
+}
+
+.playlist {
+    position: absolute;
+    width: 100%;
+    height: 30vh;
+    bottom: -42.5%;
+    left: 0;
+    background-color: var(--light-black);
+    box-shadow: 0.7rem 0.5rem 1rem var(--black-color);
+    border-radius: 1rem;
+    transition: all 0.5s;
+}
+
+.add-playlist {
+    bottom: 0;
+}
+
+.playlists {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.playlists:hover {
+    background-color: var(--black-color);
+    border-radius: 0.5rem;
+}
+
+.playlist img {
+    margin-left: 1rem;
+    width: 18%;
+    height: 3.5rem;
+}
+
+.song-list h3 {
+    color: var(--white-color);
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.song-list p {
+    font-size: 0.8rem;
+}
+
+.check-playlist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: center;
+    padding: 0.3rem 0;
+    cursor: pointer;
+}
+
+.next-line {
+    background-color: var(--main-color);
+    height: 0.2rem;
+    width: 3.5rem;
+    border-radius: 1rem;
+}
+
+.playlists-container {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 1rem;
+}
+
+.playlists-container::-webkit-scrollbar {
+    width: 0.2rem;
+}
+
+.playlists-container::-webkit-scrollbar-track {
+    background-color: var(--black-color);
+}
+
+.playlists-container::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 1rem;
+}
+
+.song-list .active {
+    transition: all 0.5s;
+    background-color: var(--black-color);
+}
+
+@media screen and (max-width: 1450px) {
+    .container {
+        width: 25%;
+        height: 60vh;
+    } 
+
+    .playlist {
+        bottom: -45%;
+    }
+    
+    .add-playlist {
+        bottom: 0;
+    }
+}
+
+
+@media screen and (max-width: 1400px) {
+    .container {
+        width: 30%;
+        height: 65vh;
+    } 
+
+    .playlist {
+        bottom: -42%;
+    }
+    
+    .add-playlist {
+        bottom: 0;
+    }
+}
+
+
+@media screen and (max-width: 1300px) {
+    .container {
+        width: 30%;
+        height: 65vh;
+    } 
+
+    .playlist {
+        bottom: -42%;
+    }
+
+    .add-playlist {
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 30%;
+        height: 65vh;
+    } 
+
+    .playlist {
+        bottom: -42%;
+    }
+    
+    .add-playlist {
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .container {
+        width: 30%;
+        height: 65vh;
+    } 
+
+    .playlist {
+        bottom: -42%;
+    }
+    
+    .add-playlist {
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .container {
+        width: 30%;
+        height: 80vh;
+    } 
+
+    .playlist {
+        bottom: -34%;
+    }
+    
+    .add-playlist {
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        width: 30%;
+        height: 80vh;
+    } 
+
+    .playlist {
+        bottom: -34%;
+    }
+    
+    .add-playlist {
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 40%;
+        height: 80vh;
+    } 
+
+    .playlist {
+        bottom: -33%;
+    }
+    
+    .add-playlist {
+        bottom: 0;
+    }
+}
+
+@media screen and (min-width: 250px) and (max-width: 450px) {
+    .container {
+        width: 90%;
+        height: 80vh;
+    } 
+
+    .playlist {
+        bottom: -33%;
+    }
+    
+    .add-playlist {
+        bottom: 0;
+    }
+}

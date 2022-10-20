@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="top-area">
+            <span><i class="fa-regular fa-heart" title="regular"></i></span>
+            <span>Now Playing</span>
+            <span><i class="fa-solid fa-plus"></i>
+        </div>
+
+        <div class="middle-area">
+            <img src="./files/images/Music_Player-512.webp" alt="music">
+            <h3>Song Name</h3>
+            <p>Artist Name</p>
+        </div>
+
+        <div class="progress-area">
+            <div class="progress-bar">
+                <div class="progress-load">
+                    <audio id="main-audio"></audio>
+                </div>
+            </div>
+            <div class="song-timer">
+                <span class="current-duration">0:00</span>
+                <span class="max-duration">0:00</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <i class="fa-solid fa-repeat repeat" title="no-repeat"></i>
+            <i class="fa-sharp fa-solid fa-backward"></i>
+            <i class="fa-solid fa-play playMusic"></i>
+            <i class="fa-sharp fa-solid fa-forward"></i>
+            <div class="volums">
+                <i class="fa-solid fa-volume-high addVolume"></i>
+                <input type="range" min="0" max="100" value="100" class="increaseVolume">
+            </div>
+        </div>
+
+        <div class="playlist">
+            <div class="check-playlist">
+                <span class="next-line"></span>
+                <span class="next-line"></span>
+            </div>
+
+            <div class="playlists-container">
+                <div class="playlists-1">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
