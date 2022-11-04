@@ -350,11 +350,11 @@ body {
 @media screen and (max-width: 768px) {
     .container {
         width: 40%;
-        height: 80vh;
+        height: 70vh;
     } 
 
     .playlist {
-        bottom: -33%;
+        bottom: -40%;
     }
     
     .add-playlist {
@@ -365,11 +365,11 @@ body {
 @media screen and (min-width: 250px) and (max-width: 450px) {
     .container {
         width: 90%;
-        height: 80vh;
+        height: 70vh;
     } 
 
     .playlist {
-        bottom: -33%;
+        bottom: -39%;
     }
     
     .add-playlist {
